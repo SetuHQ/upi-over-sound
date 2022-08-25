@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />
+        <title>Customer - UPI DL</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="../js/constants.js"></script>
+        <script type="text/javascript" src="quiet/quiet.js"></script>
+        <script>
+            Quiet.init({
+                profilesPrefix: "./quiet/",
+                memoryInitializerPrefix: "./quiet/",
+                libfecPrefix: "./quiet/",
+            });
+        </script>
+        <script
+            async
+            type="text/javascript"
+            src="quiet/quiet-emscripten.js"
+        ></script>
+        <script src="./js/receivetext.js"></script>
+    </head>
+
+    <body>
+        <div class="login-dark" style="height: 695px">
+            <div class="wrapper">
+                <h3>Receive payment link</h3>
+                <p>
+                    Please hold your device close to the transmitter. Once the
+                    payment Link is received, you will automatically be
+                    redirected to payment.
+                </p>
+                <div
+                    class="form-group"
+                    data-quiet-profile-name="audible"
+                    data-quiet-receive-text
+                >
+                    <div
+                        class="alert alert-danger d-none"
+                        data-quiet-receive-text-warning
+                    ></div>
+                    <button
+                        type="button"
+                        class="btn btn-primary btn-block"
+                        style="width: 100%"
+                        data-quiet-receive-text-button
+                        data-quiet-receiving-text="Receiving..."
+                    >
+                        Receive link
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

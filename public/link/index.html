@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />
+        <title>Create link - UPI DL</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script type="text/javascript" src="../js/constants.js"></script>
+        <script type="text/javascript" src="quiet/quiet.js"></script>
+        <script>
+            Quiet.init({
+                profilesPrefix: "./quiet/",
+                memoryInitializerPrefix: "./quiet/",
+                libfecPrefix: "./quiet/",
+            });
+        </script>
+
+        <script src="./js/sendtext.js"></script>
+        <script
+            async
+            type="text/javascript"
+            src="quiet/quiet-emscripten.js"
+        ></script>
+    </head>
+
+    <body>
+        <div class="login-dark" style="height: 695px">
+            <div class="wrapper">
+                <h3>Payment link generated!</h3>
+                <p>
+                    Send the generated payment to the customer. Make sure the
+                    volume is set to 100% and customer's microphone is as close
+                    as possible to the speaker.
+                </p>
+                <div class="form-group">
+                    <code id="payment-link"></code>
+                </div>
+                <div
+                    class="alert alert-danger d-none"
+                    data-quiet-send-text-warning
+                ></div>
+                <div class="form-group d-none">
+                    <input
+                        type="text"
+                        data-quiet-text-input
+                        id="payment-link-url"
+                    />
+                </div>
+                <div class="form-group">
+                    <button
+                        class="btn btn-primary btn-block"
+                        data-quiet-send-text-button
+                        data-quiet-sending-text="Sending..."
+                        data-quiet-profile-name="audible"
+                    >
+                        Send link to customer
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const params = new Proxy(
+                new URLSearchParams(window.location.search),
+                {
+                    get: (searchParams, prop) => searchParams.get(prop),
+                }
+            );
+            $("#payment-link").html(urls[params.env] + params.id);
+            $("#payment-link-url").val(params.env[0] + "-" + params.id);
+        </script>
+    </body>
+</html>

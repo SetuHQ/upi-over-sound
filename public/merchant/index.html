@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        />
+        <title>Create link - UPI DL</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+
+    <body>
+        <div class="login-dark" style="height: 695px">
+            <form action="/generate-link" method="post" class="wrapper">
+                <h2>Generate link</h2>
+                <h5>Enter amount to generate payment link</h5>
+                <div class="form-group">
+                    <input
+                        class="form-control"
+                        type="amount"
+                        name="amount"
+                        placeholder="Amount in INR"
+                        required="required"
+                        onchange="validateAmount()"
+                    />
+                </div>
+                <div class="form-group">
+                    <button
+                        class="btn btn-primary btn-block"
+                        id="submit"
+                        type="submit"
+                        disabled="disabled"
+                    >
+                        Generate Link
+                    </button>
+                </div>
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+    <script>
+        $("#submit").click(function (e) {
+            $("#submit").text("Generating...");
+        });
+
+        function validateAmount() {
+            var amount = $("input[name='amount']").val();
+            if (amount.length == 0) {
+                $("#submit").prop("disabled", true);
+            } else {
+                $("#submit").prop("disabled", false);
+            }
+        }
+    </script>
+</html>
