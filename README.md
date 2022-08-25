@@ -12,7 +12,7 @@ Merchants can generate an UPI link with desired amount and Customers can receive
 
 ### Setup UPI Deeplink with Setu
 
-Follow this documentation to setup UPI Deeplinks with Setu. At the end of it, you would be able to get sandbox credentials, `product_instance_id`, `client_id` and `client_secret` for your product.
+Follow this [documentation](https://docs.setu.co/payments/upi-deeplinks/quickstart) to setup UPI Deeplinks with Setu. At the end of it, you would be able to get sandbox credentials, `product_instance_id`, `client_id` and `client_secret` for your product.
 
 Replace the values in `.env` file
 
